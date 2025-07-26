@@ -10,9 +10,9 @@
 - **Frontend**: HTML, CSS, JavaScript
 - **No Backend**: This app works entirely on the frontend, ideal for basic tracking and simple gamification.
 ## Usage
-1. Complete the daily quests such as push-ups, jogging, and plank.
-2 Once a quest is completed, your stats (strength, stamina, and endurance) will increase.
-3 If any quest is missed, a penalty quest will activate with additional challenges.
-4 Track your protein and carbohydrate intake to monitor your diet.
+- Complete the daily quests such as push-ups, jogging, and plank.
+- Once a quest is completed, your stats (strength, stamina, and endurance) will increase.
+- If any quest is missed, a penalty quest will activate with additional challenges.
+- Track your protein and carbohydrate intake to monitor your diet.
 ## License
 This project is open-source and available under the MIT License
