@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoloFit - Statistics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-container"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <!-- Stats Screen -->
+    <div id="statsScreen" class="screen active">
+        <div class="container">
+            <header class="screen-header">
+                <h2 class="screen-title">HUNTER STATISTICS</h2>
+            </header>
+
+            <div class="stats-detailed">
+                <div class="stat-detail-card">
+                    <h3>STRENGTH</h3>
+                    <div class="stat-circle">
+                        <canvas id="strengthChart" width="120" height="120"></canvas>
+                        <div class="stat-center">85%</div>
+                        <div class="circle-glow strength-circle-glow"></div>
+                    </div>
+                    <p>Reflects your lifting capacity and raw power</p>
+                </div>
+
+                <div class="stat-detail-card">
+                    <h3>STAMINA</h3>
+                    <div class="stat-circle">
+                        <canvas id="staminaChart" width="120" height="120"></canvas>
+                        <div class="stat-center">70%</div>
+                        <div class="circle-glow stamina-circle-glow"></div>
+                    </div>
+                    <p>Indicates cardiovascular endurance and rapid recovery</p>
+                </div>
+
+                <div class="stat-detail-card">
+                    <h3>ENDURANCE</h3>
+                    <div class="stat-circle">
+                        <canvas id="enduranceChart" width="120" height="120"></canvas>
+                        <div class="stat-center">92%</div>
+                        <div class="circle-glow endurance-circle-glow"></div>
+                    </div>
+                    <p>Measures your ability to sustain prolonged, intense effort</p>
+                </div>
+            </div>
+
+            <div class="progress-history">
+                <h3 class="section-title">
+                    <span class="title-icon">📈</span>
+                    PROGRESS HISTORY
+                    <div class="title-underline"></div>
+                </h3>
+                <div class="chart-container">
+                    <canvas id="progressChart" width="350" height="200"></canvas>
+                    <div class="chart-overlay"></div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn" data-screen="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="quests">
+                <span class="nav-icon">⚔️</span>
+                <span class="nav-label">Quests</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn active" data-screen="stats">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Stats</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="nutrition">
+                <span class="nav-icon">🍎</span>
+                <span class="nav-label">Nutrition</span>
+                <div class="nav-ripple"></div>
+            </button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

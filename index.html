@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoloFit - Level Up Your Fitness</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-container"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="loginScreen" class="screen active">
+        <div class="container">
+            <div class="logo-section">
+                <h1 class="app-title">
+                    <span class="title-letter">S</span>
+                    <span class="title-letter">O</span>
+                    <span class="title-letter">L</span>
+                    <span class="title-letter">O</span>
+                    <span class="title-letter">F</span>
+                    <span class="title-letter">I</span>
+                    <span class="title-letter">T</span>
+                </h1>
+                <p class="tagline">
+                    <span class="glitch" data-text="YOUR AWAKENING BEGINS NOW!">YOUR AWAKENING BEGINS NOW!</span>
+                </p>
+            </div>
+            
+            <form id="loginForm" class="auth-form">
+                <div class="input-group">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <div class="input-glow"></div>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <span class="btn-text">GET STARTED</span>
+                    <div class="btn-particles"></div>
+                </button>
+            </form>
+            
+            <p class="auth-switch">
+                Don't have an account? <span id="showSignup" class="link">Sign Up</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Signup Screen -->
+    <div id="signupScreen" class="screen">
+        <div class="container">
+            <div class="logo-section">
+                <h1 class="app-title">
+                    <span class="title-letter">S</span>
+                    <span class="title-letter">O</span>
+                    <span class="title-letter">L</span>
+                    <span class="title-letter">O</span>
+                    <span class="title-letter">F</span>
+                    <span class="title-letter">I</span>
+                    <span class="title-letter">T</span>
+                </h1>
+                <p class="tagline">
+                    <span class="glitch" data-text="CREATE YOUR HUNTER PROFILE">CREATE YOUR HUNTER PROFILE</span>
+                </p>
+            </div>
+            
+            <form id="signupForm" class="auth-form">
+                <div class="input-group">
+                    <input type="text" id="signupName" placeholder="Hunter Name" required>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="signupEmail" placeholder="Email" required>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signupPassword" placeholder="Password" required>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="input-group">
+                    <select id="fitnessLevel" required>
+                        <option value="">Select Fitness Level</option>
+                        <option value="beginner">E-Rank (Beginner)</option>
+                        <option value="intermediate">D-Rank (Intermediate)</option>
+                        <option value="advanced">C-Rank (Advanced)</option>
+                        <option value="expert">B-Rank (Expert)</option>
+                    </select>
+                    <div class="input-glow"></div>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <span class="btn-text">BEGIN AWAKENING</span>
+                    <div class="btn-particles"></div>
+                </button>
+            </form>
+            
+            <p class="auth-switch">
+                Already have an account? <span id="showLogin" class="link">Login</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Home/Dashboard Screen -->
+    <div id="homeScreen" class="screen">
+        <div class="container">
+            <header class="app-header">
+                <div class="user-info">
+                    <h2 id="userName" class="username-glow">Hunter</h2>
+                    <div class="level-info">
+                        <span class="level">Level <span id="userLevel">1</span></span>
+                        <div class="xp-bar">
+                            <div class="xp-fill" id="xpFill"></div>
+                            <div class="xp-sparkles"></div>
+                        </div>
+                        <span class="xp-text"><span id="currentXP">0</span>/<span id="maxXP">100</span> XP</span>
+                    </div>
+                </div>
+                <button id="logoutBtn" class="logout-btn">
+                    <span class="logout-icon">⚡</span>
+                </button>
+            </header>
+
+            <div class="stats-overview">
+                <div class="stat-card" data-stat="strength">
+                    <div class="stat-value" id="strengthValue">85</div>
+                    <div class="stat-label">STRENGTH</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill strength-fill"></div>
+                        <div class="stat-glow strength-glow"></div>
+                    </div>
+                </div>
+                <div class="stat-card" data-stat="stamina">
+                    <div class="stat-value" id="staminaValue">70</div>
+                    <div class="stat-label">STAMINA</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill stamina-fill"></div>
+                        <div class="stat-glow stamina-glow"></div>
+                    </div>
+                </div>
+                <div class="stat-card" data-stat="endurance">
+                    <div class="stat-value" id="enduranceValue">92</div>
+                    <div class="stat-label">ENDURANCE</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill endurance-fill"></div>
+                        <div class="stat-glow endurance-glow"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="daily-quests">
+                <h3 class="section-title">
+                    <span class="title-icon">⚔️</span>
+                    DAILY QUESTS
+                    <div class="title-underline"></div>
+                </h3>
+                <div class="quest-list" id="questList">
+                    <!-- Quests will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="nutrition-summary">
+                <h3 class="section-title">
+                    <span class="title-icon">🍎</span>
+                    NUTRITION STATUS
+                    <div class="title-underline"></div>
+                </h3>
+                <div class="nutrition-chart">
+                    <canvas id="nutritionChart" width="300" height="300"></canvas>
+                    <div class="chart-glow"></div>
+                </div>
+                <div class="nutrition-stats">
+                    <div class="nutrition-item">
+                        <span class="nutrition-label">Protein</span>
+                        <span class="nutrition-value"><span id="proteinValue">120</span>g / 150g</span>
+                        <div class="nutrition-bar">
+                            <div class="nutrition-fill protein-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="nutrition-item">
+                        <span class="nutrition-label">Carbs</span>
+                        <span class="nutrition-value"><span id="carbsValue">200</span>g / 250g</span>
+                        <div class="nutrition-bar">
+                            <div class="nutrition-fill carbs-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="nutrition-item">
+                        <span class="nutrition-label">Fats</span>
+                        <span class="nutrition-value"><span id="fatsValue">60</span>g / 80g</span>
+                        <div class="nutrition-bar">
+                            <div class="nutrition-fill fats-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-screen="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="quests">
+                <span class="nav-icon">⚔️</span>
+                <span class="nav-label">Quests</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="stats">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Stats</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="nutrition">
+                <span class="nav-icon">🍎</span>
+                <span class="nav-label">Nutrition</span>
+                <div class="nav-ripple"></div>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Quests Screen -->
+    <div id="questsScreen" class="screen">
+        <div class="container">
+            <header class="screen-header">
+                <h2 class="screen-title">DAILY QUESTS</h2>
+                <div class="quest-progress">
+                    <span id="completedQuests">0</span>/<span id="totalQuests">5</span> Completed
+                    <div class="progress-glow"></div>
+                </div>
+            </header>
+
+            <div class="quest-categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="strength">Strength</button>
+                <button class="category-btn" data-category="cardio">Cardio</button>
+                <button class="category-btn" data-category="flexibility">Flexibility</button>
+            </div>
+
+            <div class="quest-list-full" id="questListFull">
+                <!-- Detailed quests will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn" data-screen="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn active" data-screen="quests">
+                <span class="nav-icon">⚔️</span>
+                <span class="nav-label">Quests</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="stats">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Stats</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="nutrition">
+                <span class="nav-icon">🍎</span>
+                <span class="nav-label">Nutrition</span>
+                <div class="nav-ripple"></div>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Stats Screen -->
+    <div id="statsScreen" class="screen">
+        <div class="container">
+            <header class="screen-header">
+                <h2 class="screen-title">HUNTER STATISTICS</h2>
+            </header>
+
+            <div class="stats-detailed">
+                <div class="stat-detail-card">
+                    <h3>STRENGTH</h3>
+                    <div class="stat-circle">
+                        <canvas id="strengthChart" width="120" height="120"></canvas>
+                        <div class="stat-center">85%</div>
+                        <div class="circle-glow strength-circle-glow"></div>
+                    </div>
+                    <p>Reflects your lifting capacity and raw power</p>
+                </div>
+
+                <div class="stat-detail-card">
+                    <h3>STAMINA</h3>
+                    <div class="stat-circle">
+                        <canvas id="staminaChart" width="120" height="120"></canvas>
+                        <div class="stat-center">70%</div>
+                        <div class="circle-glow stamina-circle-glow"></div>
+                    </div>
+                    <p>Indicates cardiovascular endurance and rapid recovery</p>
+                </div>
+
+                <div class="stat-detail-card">
+                    <h3>ENDURANCE</h3>
+                    <div class="stat-circle">
+                        <canvas id="enduranceChart" width="120" height="120"></canvas>
+                        <div class="stat-center">92%</div>
+                        <div class="circle-glow endurance-circle-glow"></div>
+                    </div>
+                    <p>Measures your ability to sustain prolonged, intense effort</p>
+                </div>
+            </div>
+
+            <div class="progress-history">
+                <h3 class="section-title">
+                    <span class="title-icon">📈</span>
+                    PROGRESS HISTORY
+                    <div class="title-underline"></div>
+                </h3>
+                <div class="chart-container">
+                    <canvas id="progressChart" width="350" height="200"></canvas>
+                    <div class="chart-overlay"></div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn" data-screen="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="quests">
+                <span class="nav-icon">⚔️</span>
+                <span class="nav-label">Quests</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn active" data-screen="stats">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Stats</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="nutrition">
+                <span class="nav-icon">🍎</span>
+                <span class="nav-label">Nutrition</span>
+                <div class="nav-ripple"></div>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Nutrition Screen -->
+    <div id="nutritionScreen" class="screen">
+        <div class="container">
+            <header class="screen-header">
+                <h2 class="screen-title">NUTRITION DASHBOARD</h2>
+                <div class="calories-info">
+                    <span id="caloriesConsumed">1850</span> / <span id="caloriesTarget">2200</span> kcal
+                    <div class="calories-glow"></div>
+                </div>
+            </header>
+
+            <div class="nutrition-overview">
+                <div class="chart-container">
+                    <canvas id="nutritionPieChart" width="250" height="250"></canvas>
+                    <div class="chart-glow"></div>
+                </div>
+            </div>
+
+            <div class="macro-breakdown">
+                <div class="macro-item">
+                    <div class="macro-header">
+                        <span class="macro-name">PROTEIN</span>
+                        <span class="macro-amount">120g / 150g</span>
+                    </div>
+                    <div class="macro-bar">
+                        <div class="macro-fill protein-fill" style="width: 80%"></div>
+                        <div class="macro-sparkle"></div>
+                    </div>
+                </div>
+
+                <div class="macro-item">
+                    <div class="macro-header">
+                        <span class="macro-name">CARBOHYDRATES</span>
+                        <span class="macro-amount">200g / 250g</span>
+                    </div>
+                    <div class="macro-bar">
+                        <div class="macro-fill carbs-fill" style="width: 80%"></div>
+                        <div class="macro-sparkle"></div>
+                    </div>
+                </div>
+
+                <div class="macro-item">
+                    <div class="macro-header">
+                        <span class="macro-name">FATS</span>
+                        <span class="macro-amount">60g / 80g</span>
+                    </div>
+                    <div class="macro-bar">
+                        <div class="macro-fill fats-fill" style="width: 75%"></div>
+                        <div class="macro-sparkle"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meal-log">
+                <h3 class="section-title">
+                    <span class="title-icon">🍽️</span>
+                    TODAY'S MEALS
+                    <div class="title-underline"></div>
+                </h3>
+                <div class="meal-list" id="mealList">
+                    <!-- Meals will be populated by JavaScript -->
+                </div>
+                <button class="btn-secondary" id="addMealBtn">
+                    <span class="btn-text">+ ADD MEAL</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn" data-screen="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="quests">
+                <span class="nav-icon">⚔️</span>
+                <span class="nav-label">Quests</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="stats">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Stats</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn active" data-screen="nutrition">
+                <span class="nav-icon">🍎</span>
+                <span class="nav-label">Nutrition</span>
+                <div class="nav-ripple"></div>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Penalty Quest Modal -->
+    <div id="penaltyModal" class="modal">
+        <div class="modal-content penalty-modal">
+            <div class="modal-glow"></div>
+            <div class="notification-header">
+                <span class="notification-icon pulsing">⚠️</span>
+                <h3>NOTIFICATION</h3>
+            </div>
+            <div class="penalty-message">
+                <p>Your fitness level will drop in <span id="penaltyTimer" class="timer-glow">0.02</span> seconds</p>
+                <p>if you choose not to accept.</p>
+                <p><strong>Will you accept?</strong></p>
+            </div>
+            <div class="penalty-actions">
+                <button id="acceptPenalty" class="btn-accept">
+                    <span>Yes</span>
+                    <div class="btn-glow"></div>
+                </button>
+                <button id="declinePenalty" class="btn-decline">
+                    <span>No</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

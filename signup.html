@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoloFit - Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-container"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <!-- Signup Screen -->
+    <div id="signupScreen" class="screen active">
+        <div class="container">
+            <div class="logo-section">
+                <h1 class="app-title">
+                    <span class="title-letter">S</span>
+                    <span class="title-letter">O</span>
+                    <span class="title-letter">L</span>
+                    <span class="title-letter">O</span>
+                    <span class="title-letter">F</span>
+                    <span class="title-letter">I</span>
+                    <span class="title-letter">T</span>
+                </h1>
+                <p class="tagline">
+                    <span class="glitch" data-text="CREATE YOUR HUNTER PROFILE">CREATE YOUR HUNTER PROFILE</span>
+                </p>
+            </div>
+            
+            <form id="signupForm" class="auth-form">
+                <div class="input-group">
+                    <input type="text" id="signupName" placeholder="Hunter Name" required>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="signupEmail" placeholder="Email" required>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signupPassword" placeholder="Password" required>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="input-group">
+                    <select id="fitnessLevel" required>
+                        <option value="">Select Fitness Level</option>
+                        <option value="beginner">E-Rank (Beginner)</option>
+                        <option value="intermediate">D-Rank (Intermediate)</option>
+                        <option value="advanced">C-Rank (Advanced)</option>
+                        <option value="expert">B-Rank (Expert)</option>
+                    </select>
+                    <div class="input-glow"></div>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <span class="btn-text">BEGIN AWAKENING</span>
+                    <div class="btn-particles"></div>
+                </button>
+            </form>
+            
+            <p class="auth-switch">
+                Already have an account? <span id="showLogin" class="link">Login</span>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

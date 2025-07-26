@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoloFit - Nutrition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-container"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <!-- Nutrition Screen -->
+    <div id="nutritionScreen" class="screen active">
+        <div class="container">
+            <header class="screen-header">
+                <h2 class="screen-title">NUTRITION DASHBOARD</h2>
+                <div class="calories-info">
+                    <span id="caloriesConsumed">1850</span> / <span id="caloriesTarget">2200</span> kcal
+                    <div class="calories-glow"></div>
+                </div>
+            </header>
+
+            <div class="nutrition-overview">
+                <div class="speedometer-container">
+                    <canvas id="nutritionPieSpeedometer" width="280" height="180"></canvas>
+                    <div class="speedometer-glow"></div>
+                    <div class="speedometer-center">
+                        <div class="speedometer-value" id="nutritionPercentageMain">84%</div>
+                        <div class="speedometer-label">DAILY GOAL</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="macro-breakdown">
+                <div class="macro-item">
+                    <div class="macro-header">
+                        <span class="macro-name">PROTEIN</span>
+                        <span class="macro-amount">120g / 150g</span>
+                    </div>
+                    <div class="macro-bar">
+                        <div class="macro-fill protein-fill" style="width: 80%"></div>
+                        <div class="macro-sparkle"></div>
+                    </div>
+                </div>
+
+                <div class="macro-item">
+                    <div class="macro-header">
+                        <span class="macro-name">CARBOHYDRATES</span>
+                        <span class="macro-amount">200g / 250g</span>
+                    </div>
+                    <div class="macro-bar">
+                        <div class="macro-fill carbs-fill" style="width: 80%"></div>
+                        <div class="macro-sparkle"></div>
+                    </div>
+                </div>
+
+                <div class="macro-item">
+                    <div class="macro-header">
+                        <span class="macro-name">FATS</span>
+                        <span class="macro-amount">60g / 80g</span>
+                    </div>
+                    <div class="macro-bar">
+                        <div class="macro-fill fats-fill" style="width: 75%"></div>
+                        <div class="macro-sparkle"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meal-log">
+                <h3 class="section-title">
+                    <span class="title-icon">🍽️</span>
+                    TODAY'S MEALS
+                    <div class="title-underline"></div>
+                </h3>
+                <div class="meal-list" id="mealList">
+                    <!-- Meals will be populated by JavaScript -->
+                </div>
+                <button class="btn-secondary" id="addMealBtn">
+                    <span class="btn-text">+ ADD MEAL</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn" data-screen="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="quests">
+                <span class="nav-icon">⚔️</span>
+                <span class="nav-label">Quests</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="stats">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Stats</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn active" data-screen="nutrition">
+                <span class="nav-icon">🍎</span>
+                <span class="nav-label">Nutrition</span>
+                <div class="nav-ripple"></div>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Penalty Quest Modal -->
+    <div id="penaltyModal" class="modal">
+        <div class="modal-content penalty-modal">
+            <div class="modal-glow"></div>
+            <div class="notification-header">
+                <span class="notification-icon pulsing">⚠️</span>
+                <h3>NOTIFICATION</h3>
+            </div>
+            <div class="penalty-message">
+                <p>Your fitness level will drop in <span id="penaltyTimer" class="timer-glow">0.02</span> seconds</p>
+                <p>if you choose not to accept.</p>
+                <p><strong>Will you accept?</strong></p>
+            </div>
+            <div class="penalty-actions">
+                <button id="acceptPenalty" class="btn-accept">
+                    <span>Yes</span>
+                    <div class="btn-glow"></div>
+                </button>
+                <button id="declinePenalty" class="btn-decline">
+                    <span>No</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

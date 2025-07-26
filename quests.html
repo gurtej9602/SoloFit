@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoloFit - Quests</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-container"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <!-- Quests Screen -->
+    <div id="questsScreen" class="screen active">
+        <div class="container">
+            <header class="screen-header">
+                <h2 class="screen-title">DAILY QUESTS</h2>
+                <div class="quest-progress">
+                    <span id="completedQuests">0</span>/<span id="totalQuests">5</span> Completed
+                    <div class="progress-glow"></div>
+                </div>
+            </header>
+
+            <div class="quest-categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="strength">Strength</button>
+                <button class="category-btn" data-category="cardio">Cardio</button>
+                <button class="category-btn" data-category="flexibility">Flexibility</button>
+            </div>
+
+            <div class="quest-list-full" id="questListFull">
+                <!-- Detailed quests will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn" data-screen="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn active" data-screen="quests">
+                <span class="nav-icon">⚔️</span>
+                <span class="nav-label">Quests</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="stats">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Stats</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="nutrition">
+                <span class="nav-icon">🍎</span>
+                <span class="nav-label">Nutrition</span>
+                <div class="nav-ripple"></div>
+            </button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

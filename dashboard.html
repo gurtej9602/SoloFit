@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoloFit - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-container"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <!-- Home/Dashboard Screen -->
+    <div id="homeScreen" class="screen active">
+        <div class="container">
+            <header class="app-header">
+                <div class="user-info">
+                    <h2 id="userName" class="username-glow">Affan Khan</h2>
+                    <div class="level-info">
+                        <span class="level">Level <span id="userLevel">1</span></span>
+                        <div class="xp-bar">
+                            <div class="xp-fill" id="xpFill"></div>
+                            <div class="xp-sparkles"></div>
+                        </div>
+                        <span class="xp-text"><span id="currentXP">0</span>/<span id="maxXP">100</span> XP</span>
+                    </div>
+                </div>
+                <button id="logoutBtn" class="logout-btn">
+                    <span class="logout-icon">⚡</span>
+                </button>
+            </header>
+
+            <div class="stats-overview">
+                <div class="stat-card" data-stat="strength">
+                    <div class="stat-value" id="strengthValue">85</div>
+                    <div class="stat-label">STRENGTH</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill strength-fill"></div>
+                        <div class="stat-glow strength-glow"></div>
+                    </div>
+                </div>
+                <div class="stat-card" data-stat="stamina">
+                    <div class="stat-value" id="staminaValue">70</div>
+                    <div class="stat-label">STAMINA</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill stamina-fill"></div>
+                        <div class="stat-glow stamina-glow"></div>
+                    </div>
+                </div>
+                <div class="stat-card" data-stat="endurance">
+                    <div class="stat-value" id="enduranceValue">92</div>
+                    <div class="stat-label">ENDURANCE</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill endurance-fill"></div>
+                        <div class="stat-glow endurance-glow"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="daily-quests">
+                <h3 class="section-title">
+                    <span class="title-icon">⚔️</span>
+                    DAILY QUESTS
+                    <div class="title-underline"></div>
+                </h3>
+                <div class="quest-list" id="questList">
+                    <!-- Quests will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="nutrition-summary">
+                <h3 class="section-title">
+                    <span class="title-icon">🍎</span>
+                    NUTRITION STATUS
+                    <div class="title-underline"></div>
+                </h3>
+                <div class="speedometer-container">
+                    <canvas id="nutritionSpeedometer" width="300" height="200"></canvas>
+                    <div class="speedometer-glow"></div>
+                    <div class="speedometer-center">
+                        <div class="speedometer-value" id="nutritionPercentage">75%</div>
+                        <div class="speedometer-label">NUTRITION</div>
+                    </div>
+                </div>
+                <div class="nutrition-stats">
+                    <div class="nutrition-item">
+                        <span class="nutrition-label">Protein</span>
+                        <span class="nutrition-value"><span id="proteinValue">120</span>g / 150g</span>
+                        <div class="nutrition-bar">
+                            <div class="nutrition-fill protein-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="nutrition-item">
+                        <span class="nutrition-label">Carbs</span>
+                        <span class="nutrition-value"><span id="carbsValue">200</span>g / 250g</span>
+                        <div class="nutrition-bar">
+                            <div class="nutrition-fill carbs-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="nutrition-item">
+                        <span class="nutrition-label">Fats</span>
+                        <span class="nutrition-value"><span id="fatsValue">60</span>g / 80g</span>
+                        <div class="nutrition-bar">
+                            <div class="nutrition-fill fats-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-screen="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="quests">
+                <span class="nav-icon">⚔️</span>
+                <span class="nav-label">Quests</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="stats">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Stats</span>
+                <div class="nav-ripple"></div>
+            </button>
+            <button class="nav-btn" data-screen="nutrition">
+                <span class="nav-icon">🍎</span>
+                <span class="nav-label">Nutrition</span>
+                <div class="nav-ripple"></div>
+            </button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
